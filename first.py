@@ -27,3 +27,5 @@ plt.show()
 
 plt.scatter(x,y)
 plt.show()
+
+print("git is working")
