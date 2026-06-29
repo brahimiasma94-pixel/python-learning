@@ -1,0 +1,10 @@
+hello world
+MY NAME ASMAA
+15
+6
+5
+asmaa
+<class 'int'>
+<class 'str'>
+<class 'float'>
+x= 6
