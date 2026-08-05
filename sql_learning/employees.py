@@ -1,3 +1,4 @@
+import os
 
 import sqlite3
 import pandas as pd
@@ -70,7 +71,11 @@ print(df)
 
 #  7) UPDATE_raise karim's salary by 5000
 
-cursor.execute("UPDATE employees SET salary = salary + 5000 WHERE name = 'karim' ")
+cursor.execute("""
+    UPDATE employees 
+    SET salary = salary + 5000 
+    WHERE name = 'karim' AND salary = 75000
+""")
 conn.commit()
 print("\n after UPDATE : ")
 print(pd.read_sql("SELECT name,salary FROM employees",conn) )
@@ -82,6 +87,6 @@ conn.commit()
 
 print("\n after delete omar : ")
 print(pd.read_sql("SELECT * FROM employees",conn))
-
+print(os.getcwd())
 conn.close()
 print("\nconnection is closed!")
