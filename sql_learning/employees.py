@@ -67,5 +67,21 @@ print(df)
 df["bonus"]=df["salary"]*0.10
 print("\n")
 print(df)
+
+#  7) UPDATE_raise karim's salary by 5000
+
+cursor.execute("UPDATE employees SET salary = salary + 5000 WHERE name = 'karim' ")
+conn.commit()
+print("\n after UPDATE : ")
+print(pd.read_sql("SELECT name,salary FROM employees",conn) )
+
+# 8) DELATE omar
+
+cursor.execute(" DELETE FROM employees  WHERE name = 'omar' ")
+conn.commit()
+
+print("\n after delete omar : ")
+print(pd.read_sql("SELECT * FROM employees",conn))
+
 conn.close()
 print("\nconnection is closed!")
