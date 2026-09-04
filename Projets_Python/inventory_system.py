@@ -149,5 +149,6 @@ for i , name in enumerate(df["name"]):
 
 
 print(f"\n max value gained:{round(-result.fun,2)}")
-
+conn.close()
+print("\n done!")
 
